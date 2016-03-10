@@ -1,0 +1,42 @@
+body{
+	text-align: center;
+	background-color: black;
+	color: white;
+}
+#box{
+	margin: auto;
+	width: 500px;
+	height: 500px;
+	padding-top: 5%;
+}
+h1{
+	vertical-align: top;
+}
+.canvas{
+	position: relative;
+	width: 140px;
+	height: 130px;
+	margin: auto;
+	padding: 0px;
+	left: 0px;
+	vertical-align: top;
+	outline: none;
+	display: inline-block;
+	color: white;
+	text-align: center;
+	line-height: 130px;
+	font-size: 35px;
+}
+.canvas:nth-child(2),.canvas:nth-child(3),.canvas:nth-child(5),.canvas:nth-child(6){
+	border-right: 2px solid #ffa;
+	border-bottom: 2px solid #ffa;
+}
+.canvas:nth-child(4),.canvas:nth-child(7){
+	border-bottom: 2px solid #ffa;
+}
+.canvas:nth-child(8),.canvas:nth-child(9){
+	border-right: 2px solid #ffa;
+}
+#1 {
+	
+}
