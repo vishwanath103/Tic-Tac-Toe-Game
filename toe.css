@@ -37,6 +37,12 @@ h1{
 .canvas:nth-child(8),.canvas:nth-child(9){
 	border-right: 2px solid #ffa;
 }
-#1 {
-	
+.modal-header h4{
+	color: black;
+}
+.modal-body p{
+	color: black;
+}
+.modal-footer{
+	text-align: center;
 }

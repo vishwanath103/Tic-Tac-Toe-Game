@@ -27,10 +27,12 @@ function canvasClicked(num) {
 		}
 	}
 	squaresFilled++;
-	hasWon('O');
-	if(squaresFilled == 9){
-		alert("Draw");
+	var status = hasWon('O');
+	if(status === 0){
+		if(squaresFilled == 9){
+		alert(status);
 		location.reload();
+		}
 	}
 }
 
@@ -42,10 +44,12 @@ function compTurn(){
 	state[arr[1]] = "X";
 	turn = 1;
 	squaresFilled++;
-	hasWon('X');
-	if(squaresFilled == 9){
-		alert("Draw");
+	var status = hasWon('X');
+	if(status === 0){
+		if(squaresFilled == 9){
+		alert(status);
 		location.reload();
+		}
 	}
 }
 
@@ -147,8 +151,14 @@ function evaluateLine(a,b,c) {
 function hasWon(symbol) {
 	for (var i = 0; i < winningCombinations.length; i++) {
 	if(state[winningCombinations[i][0]]==symbol&&state[winningCombinations[i][1]]== symbol&&state[winningCombinations[i][2]]==symbol){
-        alert(symbol+ " WON!");
-         location.reload();
+        $('#status').html(symbol+" WON");
+        $("#myModal").modal('show');
+        return 1;
  	}
  }
+ return 0;
+}
+
+function playAgain(){
+	location.reload();
 }

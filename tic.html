@@ -1,8 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<link rel="stylesheet" href="toe.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css">
+<link rel="stylesheet" href="toe.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 	<script src="toe.js"></script>
 </head>
 <body>
@@ -12,5 +15,21 @@
 	<div class="canvas" id="canvas4" onclick="canvasClicked(4)"></div><div class="canvas" id="canvas5" onclick="canvasClicked(5)"></div><div class="canvas" id="canvas6" onclick="canvasClicked(6)"></div>
 	<div class="canvas" id="canvas7" onclick="canvasClicked(7)"></div><div class="canvas" id="canvas8" onclick="canvasClicked(8)"></div><div class="canvas" id="canvas9" onclick="canvasClicked(9)"></div>
 	</div>
+
+	<div id="myModal" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Status</h4>
+                </div>
+                <div class="modal-body">
+                    <p id="status">Do you want to save changes you made to document before closing?</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" onclick="playAgain()">Play Again</button>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
