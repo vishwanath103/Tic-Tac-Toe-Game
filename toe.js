@@ -7,6 +7,7 @@ var state = new Array(10);
 var tree = [];
 var winningCombinations = [[1,2,3],[4,5,6],[7,8,9],[1,4,7],[2,5,8],[3,6,9],[1,5,9],[3,5,7]];
 var squaresFilled = 0;
+var status = 0;
 $(document).ready(function(){
 	turn = 1;
 	var random = Math.round(Math.random() * 8 + 1);
@@ -28,12 +29,12 @@ function canvasClicked(num) {
 	}
 	squaresFilled++;
 	var status = hasWon('O');
-	if(status === 0){
-		if(squaresFilled == 9){
-		alert(status);
-		location.reload();
-		}
-	}
+	// if(status === 0){
+	// 	if(squaresFilled == 9){
+	// 	alert(status);
+	// 	location.reload();
+	// 	}
+	// }
 }
 
 function compTurn(){
@@ -45,12 +46,12 @@ function compTurn(){
 	turn = 1;
 	squaresFilled++;
 	var status = hasWon('X');
-	if(status === 0){
-		if(squaresFilled == 9){
-		alert(status);
-		location.reload();
-		}
-	}
+	// if(status === 0){
+	// 	if(squaresFilled == 9){
+	// 	alert(status);
+	// 	location.reload();
+	// 	}
+	// }
 }
 
 function miniMax(depth,turn){
@@ -151,12 +152,16 @@ function evaluateLine(a,b,c) {
 function hasWon(symbol) {
 	for (var i = 0; i < winningCombinations.length; i++) {
 	if(state[winningCombinations[i][0]]==symbol&&state[winningCombinations[i][1]]== symbol&&state[winningCombinations[i][2]]==symbol){
+        status = 1;
         $('#status').html(symbol+" WON");
         $("#myModal").modal('show');
         return 1;
  	}
  }
- return 0;
+ if(status == 0 && squaresFilled == 9 ){
+ 	$('#status').html("Draw");
+    $("#myModal").modal('show');
+ }
 }
 
 function playAgain(){
